@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Activate from '../../src/screens/activate';
 

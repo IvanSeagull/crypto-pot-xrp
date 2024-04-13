@@ -1,7 +1,7 @@
 {
   "name": "hardhat-project",
   "scripts": {
-    "d": "npx hardhat ignition deploy ./ignition/modules/Lock.ts --network xrpl",
+    "d": "npx hardhat ignition deploy ./ignition/modules/Donut.ts --network xrpl",
     "v": "npx hardhat verify --network xrpl"
   },
   "devDependencies": {

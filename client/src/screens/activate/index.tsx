@@ -1,22 +1,22 @@
-'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styles from './styles.module.scss';
 
 import TextInput from '../../components/global/Inputs/TextInput';
 import MainButton from '../../components/global/Buttons/MainButton';
+import { useWriteContract } from 'wagmi';
+import { abi, address } from '../../utils/contract';
+import ActivateButton from './ActivateButton';
 
 const Activate = () => {
   const [username, setUsername] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
 
-  const activate = async () => {
-    setIsLoading(true);
-    // Call API to activate account
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  };
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
 
   return (
     <div className={styles.wrapper}>
@@ -35,14 +35,8 @@ const Activate = () => {
               placeholder="Username"
               fontSize={18}
             />
-            <MainButton
-              isLoading={isLoading}
-              onClick={() => {
-                activate();
-              }}
-              title="Activate"
-              loadingTitle="Activating..."
-            />
+
+            {isMounted && <ActivateButton />}
           </div>
         </div>
       </div>
