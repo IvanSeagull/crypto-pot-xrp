@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e5e5e5;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  height: 65px;
+  padding: 0 16px;
+  .input {
+    color: #131313;
+    font-size: 24px;
+    width: 80%;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    .balance {
+      color: #777;
+      font-size: 14px;
+    }
+  }
+}

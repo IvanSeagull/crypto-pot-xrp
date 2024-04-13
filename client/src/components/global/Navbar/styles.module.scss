@@ -1,0 +1,44 @@
+.wrapper {
+  position: sticky;
+  z-index: 4;
+  top: 24px;
+
+  .content {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 26px;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    .logoCon {
+      width: 64px;
+      height: 64px;
+      background-color: #d184ff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      li {
+        color: #777777;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}

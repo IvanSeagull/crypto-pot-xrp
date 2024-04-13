@@ -1,0 +1,39 @@
+.wrapper {
+  width: 100%;
+  background: #d083ff;
+  background: -webkit-linear-gradient(3deg, #a155d0 0%, #d083ff 100%);
+  background: linear-gradient(3deg, #a155d0 0%, #d083ff 100%);
+  border-radius: 24px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  .title {
+    font-size: 16px;
+    color: #fafafa;
+    font-weight: 600;
+  }
+}
+
+.loadingWrapper {
+  width: 100%;
+  background: #f6e6ff;
+  background: -webkit-linear-gradient(3deg, #ecddf6 0%, #f6e6ff 100%);
+  background: linear-gradient(3deg, #ecddf6 0%, #f6e6ff 100%);
+  border-radius: 24px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  .title {
+    font-size: 16px;
+    color: #a559d4;
+    font-weight: 600;
+  }
+}
