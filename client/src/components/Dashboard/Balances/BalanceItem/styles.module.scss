@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 24px;
+
+  .coin {
+    width: 40%;
+  }
+
+  .amount {
+    width: 40%;
+    font-size: 20px;
+    color: #1c1c1c;
+  }
+  .button {
+    width: 20%;
+  }
+}

@@ -5,13 +5,16 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 import { useAccount, useDisconnect } from 'wagmi';
 import { toast } from 'react-toastify';
+import { useApi } from '../../../../context/ApiContext';
+import { useRouter } from 'next/router';
 
 export const AuthButton = () => {
   const { address } = useAccount();
   const [isPopupOpen, setIsPopupOpen] = React.useState(false);
   const menuRef = React.useRef<any>();
   const popupState = React.useRef(isPopupOpen);
-
+  const router = useRouter();
+  const { user } = useApi();
   const { disconnect } = useDisconnect();
 
   const handleCopy = () => {
@@ -105,13 +108,18 @@ export const AuthButton = () => {
                       <img style={{ marginRight: -8 }} src="/assets/icons/warning.svg" />
                     )}
                     <section className={styles.details}>
+                      <p className={styles.username}>{user.username}</p>
                       <p className={styles.walletAddress}>{account.displayName}</p>
                     </section>
                     <div className={styles.avaCon}></div>
 
                     {isPopupOpen && (
                       <section className={styles.popup}>
-                        <button onClick={() => {}} className={styles.item}>
+                        <button
+                          onClick={() => {
+                            router.push(`/user/${user.username}`);
+                          }}
+                          className={styles.item}>
                           <img src="/assets/icons/navbar/user.svg" />
                           <p>Profile</p>
                         </button>

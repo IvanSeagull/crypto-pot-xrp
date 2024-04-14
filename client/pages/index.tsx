@@ -1,6 +1,8 @@
+'use client';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Dashboard from '../src/screens/dashboard';
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +13,7 @@ const Home: NextPage = () => {
         <link href="/favicon.ico" rel="icon" />
       </Head>
 
-      <h1>RIPPLE</h1>
+      <Dashboard />
     </div>
   );
 };

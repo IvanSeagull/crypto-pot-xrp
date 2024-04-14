@@ -9,6 +9,7 @@ import { WagmiProvider } from 'wagmi';
 import { Chain, getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import MainLayout from '../src/layout/Mainlayout';
 import { ToastContainer } from 'react-toastify';
+import ApiContextProvider from '../src/context/ApiContext';
 
 const xrpl = {
   id: 1440002,
@@ -38,9 +39,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     <WagmiProvider config={config}>
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
-          <MainLayout>
-            <Component {...pageProps} />
-          </MainLayout>
+          <ApiContextProvider>
+            <MainLayout>
+              <Component {...pageProps} />
+            </MainLayout>
+          </ApiContextProvider>
         </RainbowKitProvider>
       </QueryClientProvider>
       <ToastContainer />

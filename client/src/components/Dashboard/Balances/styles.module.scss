@@ -1,0 +1,31 @@
+.bank {
+  width: 60%;
+  height: 100%;
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1c1c1c;
+  }
+  .listCon {
+    margin-top: 20px;
+    max-height: 600px;
+    overflow-y: scroll;
+    padding-bottom: 40px;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  .listCon::-webkit-scrollbar {
+    display: none; /* For Webkit (Chrome, Safari, etc.) */
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+}
