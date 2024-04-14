@@ -36,7 +36,7 @@ const Activate = () => {
               fontSize={18}
             />
 
-            {isMounted && <ActivateButton />}
+            {isMounted && <ActivateButton username={username} />}
           </div>
         </div>
       </div>

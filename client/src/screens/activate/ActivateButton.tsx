@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import MainButton from '../../components/global/Buttons/MainButton';
 import { useWriteContract } from 'wagmi';
 import { abi, address } from '../../utils/contract';
 
-const ActivateButton = () => {
+interface ActivateButtonProps {
+  username: string;
+}
+
+const ActivateButton: FC<ActivateButtonProps> = ({ username }) => {
   const { writeContractAsync } = useWriteContract();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +18,7 @@ const ActivateButton = () => {
       abi,
       address,
       functionName: 'selfActivate',
-      args: ['seagull'],
+      args: [username],
     });
     setIsLoading(false);
   };
