@@ -34,7 +34,7 @@ const DonationItem: FC<DonationItemProps> = ({
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div className={styles.row}>
-            <p className={styles.amount}>{amount.toFixed(8)}</p>
+            <p className={styles.amount}>{amount.toFixed(2)}</p>
             <CoinContainer icon={iconUrl} title={'XRP'} size={24} />
           </div>
           <CoinContainer icon={iconUrl} title={'XRPL'} size={24} />

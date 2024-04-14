@@ -13,7 +13,7 @@ interface UserContainerProps {
 
 const UserContainer: FC<UserContainerProps> = ({ icon, username, wallet = '', size = 32 }) => {
   return (
-    <Link href={'/user/test-user'}>
+    <Link href={`/user/${username}`}>
       <div className={styles.wrapper}>
         <div
           className={styles.avaCon}

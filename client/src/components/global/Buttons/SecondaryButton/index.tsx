@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 import styles from './styles.module.scss';
-import { tailspin } from 'ldrs';
-tailspin.register();
+// import { tailspin } from 'ldrs';
+// tailspin.register();
 
 interface SecondaryButtonProps {
   isActive?: boolean;
@@ -25,11 +25,7 @@ const SecondaryButton: FC<SecondaryButtonProps> = ({
       style={{
         backgroundColor: isActive && !isLoading ? '#EBCBFF' : 'transparent',
       }}>
-      {isLoading && (
-        <>
-          <l-tailspin size="16" stroke="2" speed="0.9" color="#000" />
-        </>
-      )}
+      {isLoading && <>{/* <l-tailspin size="16" stroke="2" speed="0.9" color="#000" /> */}</>}
       <p className={styles.title}>Withdraw</p>
     </button>
   );
