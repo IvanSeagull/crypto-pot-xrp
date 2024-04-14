@@ -4,17 +4,16 @@ import styles from './styles.module.scss';
 import { useAccount, useBalance } from 'wagmi';
 
 interface AmountInputProps {
-  onClick: () => void;
   amount: string;
   setAmount: (value: string) => void;
 }
 
-const AmountInput: FC<AmountInputProps> = ({ onClick, amount, setAmount }) => {
+const AmountInput: FC<AmountInputProps> = ({ amount, setAmount }) => {
   const { address } = useAccount();
   const data = useBalance({
     address,
   });
-  console.log(data.data?.formatted);
+
   return (
     <div className={styles.wrapper}>
       <input

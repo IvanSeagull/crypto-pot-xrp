@@ -1,4 +1,4 @@
-const address = '0x9AfdC2E9AD82182C27EfA892729391904D7f8e99';
+const address = '0x18Cb9A6cbcCEf2D47D35A560096a891c3cBfF53F';
 
 const abi = [
   {
@@ -64,6 +64,11 @@ const abi = [
             name: 'amount',
             type: 'uint256',
           },
+          {
+            internalType: 'string',
+            name: 'message',
+            type: 'string',
+          },
         ],
         indexed: false,
         internalType: 'struct Donut.DonateResponse',
@@ -105,6 +110,11 @@ const abi = [
         internalType: 'address',
         name: 'toUser',
         type: 'address',
+      },
+      {
+        internalType: 'string',
+        name: 'message',
+        type: 'string',
       },
     ],
     name: 'donate',

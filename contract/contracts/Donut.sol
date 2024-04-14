@@ -23,6 +23,7 @@ contract Donut {
         address from;
         address to;
         uint256 amount;
+        string message;
     }
 
     struct WithdrawResponse {
@@ -71,7 +72,7 @@ contract Donut {
     }
 
     // ============ DONATION ============
-    function donate(address toUser) public payable {
+    function donate(address toUser, string memory message) public payable {
         require(msg.value > 0, "Donation amount must be greater than 0");
         uint256 fee = (msg.value * donationFee) / 100;
         uint256 amountAfterFee = msg.value - fee;
@@ -81,7 +82,8 @@ contract Donut {
             DonateResponse({
                 from: msg.sender,
                 to: toUser,
-                amount: amountAfterFee
+                amount: amountAfterFee,
+                message: message
             })
         );
     }
