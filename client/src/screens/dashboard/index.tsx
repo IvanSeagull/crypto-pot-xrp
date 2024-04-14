@@ -9,7 +9,7 @@ const Dashboard = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <Balances />
+        {/* <Balances /> */}
         <LastDonations />
       </div>
     </div>

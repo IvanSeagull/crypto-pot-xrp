@@ -10,6 +10,7 @@ import { Chain, getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbow
 import MainLayout from '../src/layout/Mainlayout';
 import { ToastContainer } from 'react-toastify';
 import ApiContextProvider from '../src/context/ApiContext';
+import { usePathname } from 'next/navigation';
 
 const xrpl = {
   id: 1440002,
@@ -35,14 +36,20 @@ const config = getDefaultConfig({
 const client = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const pathname = usePathname();
+
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
           <ApiContextProvider>
-            <MainLayout>
+            {pathname && !pathname.startsWith('/alert') ? (
+              <MainLayout>
+                <Component {...pageProps} />
+              </MainLayout>
+            ) : (
               <Component {...pageProps} />
-            </MainLayout>
+            )}
           </ApiContextProvider>
         </RainbowKitProvider>
       </QueryClientProvider>

@@ -5,6 +5,7 @@ import { UsersModule } from 'src/users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Transaction, TransactionSchema } from './transaction.schema';
 import { TransactionsRepository } from './transactions.repository';
+import { AlertsModule } from 'src/alerts/alerts.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { TransactionsRepository } from './transactions.repository';
       { name: Transaction.name, schema: TransactionSchema },
     ]),
     UsersModule,
+    AlertsModule,
   ],
   controllers: [TransactionsController],
   providers: [TransactionsService, TransactionsRepository],

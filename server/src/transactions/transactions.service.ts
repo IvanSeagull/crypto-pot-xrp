@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { TransactionsRepository } from './transactions.repository';
 import { UsersService } from 'src/users/users.service';
+import { AlertsGateway } from 'src/alerts/alerts.gateway';
 
 @Injectable()
 export class TransactionsService {
   constructor(
     private readonly transactionsRepository: TransactionsRepository,
     private readonly usersService: UsersService,
+    private readonly alertsGateWay: AlertsGateway,
   ) {}
 
   async create(
@@ -45,6 +47,7 @@ export class TransactionsService {
       message,
       username: toUser.username,
     };
+    await this.alertsGateWay.donate(payload);
 
     return newTransaction;
   }
